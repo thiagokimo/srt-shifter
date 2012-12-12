@@ -5,9 +5,18 @@ describe StrShifter do
 	describe "OPTIONS" do
 
 		describe "mandatory arguments" do
-			
-			describe "operation" do
+
+			describe "operation argument" do
 				
+				it "--operation"
+
+				it "-o"
+			end
+			
+			describe "operation param" do
+				
+				it "has to come right after the operation argument"
+
 				it "ADD" do
 					options = StrShifter::Options.new
 					options.opts[:operation] = :add
@@ -20,53 +29,32 @@ describe StrShifter do
 					options.valid_operation?.must_equal true
 				end
 
-				it "can't accept params different from ADD or SUB" do
+				it "can't accept things different from ADD or SUB" do
 					options = StrShifter::Options.new
 					options.opts[:operation] = :banana_split
 					options.valid_operation?.must_equal false
 				end
 			end
 
-			describe "time" do
-				
+			describe "time argument" do
+				it "--time"
+				it "-t"
 			end
 
-			describe "files" do
+			describe "time params" do
 				
+				it "has to come right after the time argument"
+
+				it "must be a Float"
+
+			end
+
+			describe "file params" do
+				
+				it "must start with a input file"
+
+				it "must end with the output file"
 			end		
-
 		end
-
-		
-
-
-
-
-
-		# describe "--operation" do
-			
-		# 	it "add"
-
-		# 	it "sub"
-
-		# 	it "invalid operations"
-		# end
-
-		# describe "--time" do
-			
-		# 	it "start with '--time'"
-
-		# 	it "get a value in seconds"
-		# end
-
-		# describe "files" do
-			
-		# 	it "has 2 params"
-
-		# 	it "start with input file name"
-
-		# 	it "ends with output file name"
-		# end
-
 	end
 end
