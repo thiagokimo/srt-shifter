@@ -1,3 +1,3 @@
-module Strshifter
+module StrShifter
   VERSION = "0.0.1"
 end

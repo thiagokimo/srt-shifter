@@ -5,7 +5,7 @@ require 'strshifter/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "strshifter"
-  gem.version       = Strshifter::VERSION
+  gem.version       = StrShifter::VERSION
   gem.authors       = ["Thiago Rocha"]
   gem.email         = ["kimobr@gmail.com"]
   gem.description   = %q{Shifts STR Subtitles}

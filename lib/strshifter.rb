@@ -1,5 +1,5 @@
 require "strshifter/version"
 
-module Strshifter
+module StrShifter
   # Your code goes here...
 end
