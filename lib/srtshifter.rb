@@ -1,6 +1,4 @@
-require "srtshifter/version"
+require "srtshifter/subtitle"
 require "srtshifter/options"
+require "srtshifter/version"
 
-module SrtShifter
-  # Your code goes here...
-end
