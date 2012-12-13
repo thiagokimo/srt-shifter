@@ -9,34 +9,10 @@ module SrtShifter
 
 		def shift
 
-			input_file = File.open(@opts[:input], "r")
+			lines = IO.readlines(@opts[:input])
 
-			while (line = input_file.gets)
-            
-	            line.scan(/^([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}) --> ([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3})/) { |match|  
-	              
-	              match.each { |e| 
+			File.open(@opts[:output], 'w') {|f| f.write("test") }
 
-	              	puts Time.parse(e)
-	              	puts Time.parse(e).usec
-
-	              }
-
-	            }
-	            
-            end
-
-            input_file.close
-
-		end
-
-
-		def add_time
-			input_file = @opts
-		end
-
-		def sub_time
-			
 		end
 
 	end
