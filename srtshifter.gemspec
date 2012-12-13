@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'strshifter/version'
+require 'srtshifter/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "strshifter"
-  gem.version       = StrShifter::VERSION
+  gem.name          = "srtshifter"
+  gem.version       = SrtShifter::VERSION
   gem.authors       = ["Thiago Rocha"]
   gem.email         = ["kimobr@gmail.com"]
   gem.description   = %q{Shifts STR Subtitles}

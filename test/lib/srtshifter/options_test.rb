@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe StrShifter do
+describe SrtShifter do
 	
 	describe "OPTIONS" do
 
@@ -18,19 +18,19 @@ describe StrShifter do
 				it "has to come right after the operation argument"
 
 				it "ADD" do
-					options = StrShifter::Options.new
+					options = SrtShifter::Options.new
 					options.opts[:operation] = :add
 					options.valid_operation?.must_equal true
 				end
 
 				it "SUB" do
-					options = StrShifter::Options.new
+					options = SrtShifter::Options.new
 					options.opts[:operation] = :sub
 					options.valid_operation?.must_equal true
 				end
 
 				it "can't accept things different from ADD or SUB" do
-					options = StrShifter::Options.new
+					options = SrtShifter::Options.new
 					options.opts[:operation] = :banana_split
 					options.valid_operation?.must_equal false
 				end

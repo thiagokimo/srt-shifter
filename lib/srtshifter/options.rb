@@ -1,9 +1,9 @@
 require 'optparse'
 
-module StrShifter
+module SrtShifter
   class Options
 
-  	OPERATIONS = [:add, :sub]
+  	OPERATIONS = ["add", "sub"]
 
   	attr_accessor :opts
 

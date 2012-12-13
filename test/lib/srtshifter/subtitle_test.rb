@@ -1,5 +1,5 @@
 require "test_helper"
 
-describe StrShifter do
+describe SrtShifter do
 	
 end
