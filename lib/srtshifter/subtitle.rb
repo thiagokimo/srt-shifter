@@ -18,34 +18,25 @@ module SrtShifter
 
 				time_match = line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
 
-				new_start_time = convert_time $1
-      			new_end_time = convert_time $2
+				new_start_time = convert_time $1 unless $1.nil?
+      			new_end_time = convert_time $2 unless $2.nil?
       			
       			new_line = "#{new_start_time} --> #{new_end_time}"
-      			puts new_line
+      			
 						
 			end
-
-			# #time_lines = lines.scan(/(\d{2}:\d{2}:\d{2}\D\d{3}) --> (\d{2}:\d{2}:\d{2}\D\d{3})/)
-			# time_lines = lines.scan(/\d/)
-
-			# puts time_lines
-
-			# #puts time_lines
-
-			#File.open(@opts[:output], 'w') {|f| f.write("test") }
 
 		end
 
 		def convert_time time
-			
-			if @opts[:operation] == "ADD"
-				Time.at(time + opts[:time])
-			else
-				Time.at(time - opts[:time])
+
+			if @opts[:operation] == "SUB"
+				@opts[:time] = -@opts[:time]
 			end
 
+			current_time = Time.parse(time)
+			new_time = Time.at(current_time.to_f + @opts[:time])
+			"#{new_time.strftime('%H:%M:%S')},#{new_time.usec/1000}"
 		end
-
 	end
 end
