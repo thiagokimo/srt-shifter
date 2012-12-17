@@ -18,14 +18,16 @@ module SrtShifter
 
 				time_match = line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
 
-				new_start_time = convert_time $1 unless $1.nil?
-      			new_end_time = convert_time $2 unless $2.nil?
-      			
-      			new_line = "#{new_start_time} --> #{new_end_time}"
-      			
-						
-			end
+				if $1.nil? && $2.nil?
+					output_file.write(line)
+				else
+					new_start_time = convert_time $1 
+      				new_end_time = convert_time $2 
+      				new_line = "#{new_start_time} --> #{new_end_time}\n"
 
+      				output_file.write(new_line)
+				end
+			end
 		end
 
 		def convert_time time
