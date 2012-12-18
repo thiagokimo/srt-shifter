@@ -13,7 +13,6 @@ module SrtShifter
 
 			lines = IO.readlines(@opts[:input])
 
-
 			lines.each do |line|
 
 				time_match = line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
@@ -28,6 +27,8 @@ module SrtShifter
       				output_file.write(new_line)
 				end
 			end
+
+			puts "Success!"
 		end
 
 		def convert_time time
