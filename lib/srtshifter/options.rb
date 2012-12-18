@@ -34,10 +34,10 @@ module SrtShifter
         raise "Time option is missing" if options[:time].nil?
         
         raise "Input file is missing" if ARGV[0].nil?
-        options[:input] = ARGV[0] unless ARGV[0] == nil
+        options[:input] = ARGV[0]
         
         raise "Output file is missing" if ARGV[1].nil?
-        options[:output] = ARGV[1] unless ARGV[1] == nil
+        options[:output] = ARGV[1]
 
         subtitle = SrtShifter::Subtitle.new(options)
         subtitle.shift
