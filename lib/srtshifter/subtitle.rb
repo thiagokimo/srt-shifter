@@ -9,6 +9,8 @@ module SrtShifter
 
 		def shift
 
+			start_time = Time.now
+
 			output_file = File.open(@opts[:output], 'w')
 
 			lines = IO.readlines(@opts[:input])
@@ -28,7 +30,10 @@ module SrtShifter
 				end
 			end
 
-			puts "Success!"
+			end_time = Time.now
+
+			puts "File created with success!"
+			puts "Elapsed time: #{end_time-start_time} seconds."
 		end
 
 		def convert_time time
