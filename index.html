@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>SRT Shifter! by thiagokimo</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>SRT Shifter!</h1>
+        <h2>Command line tool to fix SubRip files</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/thiagokimo/srt-shifter/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/thiagokimo/srt-shifter/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/thiagokimo/srt-shifter" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>SRT Shifter</h1>
+
+<p>How many times you downloaded a movie that you couldn't find a perfect synchronized subtitle to watch it?</p>
+
+<p>SRT Shifter is an open-source command-line tool that fixes the timming of your SubRip files!</p>
+
+<h2>Usage</h2>
+
+<p>On the command-line, run the executable inside the <strong>bin</strong> to get more detailed usage information.</p>
+
+<pre><code>$ ./srtshifter --help
+</code></pre>
+
+<p>This example generates a new srt file called new_sub.srt, with 2.5 milliseconds shifted ahead 
+from its original_sub.srt file.</p>
+
+<pre><code>$ strshifter -o ADD -t 2.5 original_sub.srt new_sub.srt
+</code></pre>
+
+<h2>Support</h2>
+
+<p>This tool doesn't work on Windows :P</p>
+
+<h2>Future ideas and "to do"s'</h2>
+
+<ol>
+<li>Create a self-instalation script</li>
+<li>Add Windows support</li>
+</ol><h2>How to contribute</h2>
+
+<p>Please ensure that you provide appropriate test coverage and ensure the documentation is up-to-date. It is encouraged that you perform changes in a clean topic branch rather than a master and that you create a pull request for them. This will facilitate discussion and revision.</p>
+
+<p>Please be clean, keep your commits atomic and with the smallest possible logical change. This will increase the likelihood of your submission to be used.</p>
+
+<h3>Bug reports</h3>
+
+<p>If you discover any bugs, feel free to create an issue on GitHub. Please add as much information as possible to help us fixing the possible bug.</p>
+
+<p><a href="https://github.com/thiagokimo/srt-shifter/issues">https://github.com/thiagokimo/srt-shifter/issues</a></p>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2012 Thiago Moreira Rocha.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to use, copy and modify copies of the Software, subject
+to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
