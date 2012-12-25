@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["kimobr@gmail.com"]
   gem.description   = %q{Shifts STR Subtitles}
   gem.summary       = %q{It fixes the timing of a given SubRip file}
-  gem.homepage      = ""
+  gem.homepage      = "http://thiagokimo.github.com/srt-shifter"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
