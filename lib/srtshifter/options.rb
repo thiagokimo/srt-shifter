@@ -46,32 +46,6 @@ module SrtShifter
         puts "#{ex.message}. Please use -h or --help for usage."
         exit(1)
       end
-
-      # begin
-      #   raise "Unknown option(s) #{options.join(', ')}" if options.empty?
-      # rescue Exception => e
-      #   puts "#{ex.message()}. Please use -h or --help for usage."
-      #   exit(1)
-      # end
-      
-      # begin
-
-      #   opts.parse! ARGV
-
-      #   # raise OptionParser::MissingArgument if options[:operation].nil? || options[:time].nil?
-
-      #   # options[:input] = ARGV[0] unless ARGV[0] == nil
-      #   # options[:output] = ARGV[1] unless ARGV[1] == nil
-
-      #   # subtitle = SrtShifter::Subtitle.new(options)
-      #   # subtitle.shift
-      # rescue 
-      #   # $stderr.print $!
-      #   # puts options
-      #   # puts "\n" 
-      #   # puts opts
-      #   # #exit
-      # end
     end
   end
 end
