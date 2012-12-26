@@ -11,7 +11,7 @@ describe SrtShifter do
 			end
 
 			after(:each) do
-				
+				@args = nil
 			end
 			
 			it "raise error when get none operation option" do
