@@ -44,7 +44,7 @@ module SrtShifter
 
 			current_time = Time.parse(time)
 			new_time = Time.at(current_time.to_f + @opts[:time])
-			"#{new_time.strftime('%H:%M:%S')},#{new_time.usec/1000}"
+			"#{new_time.strftime('%H:%M:%S')},#{sprintf("%.3d",new_time.usec/1000)}"
 		end
 	end
 end

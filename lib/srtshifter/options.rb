@@ -41,7 +41,6 @@ module SrtShifter
     def validate_args
       begin
 
-
           raise "Operation option is missing" if @options[:operation].nil?
           raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation].upcase
 
@@ -52,9 +51,6 @@ module SrtShifter
           
           raise "Output file is missing" if @arguments[1].nil?
           @options[:output] = @arguments[1]
-
-          # subtitle = SrtShifter::Subtitle.new(@options)
-          # subtitle.shift
 
         rescue Exception => ex
           puts "#{ex.message}. Please use -h or --help for usage."
