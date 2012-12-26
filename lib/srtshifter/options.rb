@@ -31,7 +31,7 @@ module SrtShifter
 
         opts.on_tail('-h', '--help', 'Show this help message.') do
           puts(opts)
-          exit(0)
+          # exit(0)
         end
         
         opts.parse!
@@ -54,7 +54,7 @@ module SrtShifter
 
         rescue Exception => ex
           puts "#{ex.message}. Please use -h or --help for usage."
-          exit(1)
+          # exit(1)
         end
     end
   end
