@@ -32,7 +32,7 @@ module SrtShifter
 
 			end_time = Time.now
 
-			puts "File created with success!"
+			puts "\nFile created with success!"
 			puts "Elapsed time: #{end_time-start_time} seconds."
 		end
 
