@@ -4,7 +4,7 @@ module SrtShifter
 		def initialize(args)
 			@arguments = args
 			@opts = SrtShifter::Options.new(@arguments)
-			@subtitle = subtitle = SrtShifter::Subtitle.new(@opts.options)
+			@subtitle = SrtShifter::Subtitle.new(@opts.options)
 		end
 
 		def execute
