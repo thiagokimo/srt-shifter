@@ -17,8 +17,8 @@ module SrtShifter
 
 			lines.each do |line|
 
-				time_match = line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
-
+				time_match = line.force_encoding("iso-8859-1").scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
+				
 				if $1.nil? && $2.nil?
 					output_file.write(line)
 				else
