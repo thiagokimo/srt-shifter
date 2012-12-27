@@ -7,7 +7,7 @@ describe SrtShifter do
 		describe "validate_args" do
 
 			before(:each) do
-				@args = {:operation => "add", :time => 10.0, :input => "test/samples/test_srt.srt", :output => "test_output.srt"}
+				@args = {:operation => "ADD", :time => 10.0, :input => "test/samples/test_srt.srt", :output => "test_output.srt"}
 			end
 
 			after(:each) do
@@ -34,8 +34,9 @@ describe SrtShifter do
 			it "must accept lowercase existing operations" do
 
 				opts = SrtShifter::Options.new "test/samples/test_srt.srt test_output.srt"
-				@args[:operation] = "add"
 				opts.options = @args
+				opts.options[:operation] = "sub"
+
 
 				lambda { opts.validate_args }.must_be_silent				
 			end
