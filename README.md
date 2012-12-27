@@ -1,5 +1,7 @@
 # SRT Shifter
 
+[![Build Status](https://travis-ci.org/thiagokimo/srt-shifter.png)](https://travis-ci.org/thiagokimo/srt-shifter)
+
 How many times you downloaded a movie that you couldn't find a perfect synchronized subtitle to watch it?
 
 SRT Shifter is an open-source command-line tool that fixes the timming of your SubRip files!
