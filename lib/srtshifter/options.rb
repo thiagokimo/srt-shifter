@@ -33,6 +33,11 @@ module SrtShifter
           puts(opts)
           # exit(0)
         end
+       
+         opts.on_tail("-v","--version", "Show version") do
+           puts SrtShifter::VERSION
+          exit
+         end
         
         opts.parse!
       end
