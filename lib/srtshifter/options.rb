@@ -22,7 +22,7 @@ module SrtShifter
         opts.separator "Common Options:"
 
         opts.on("-o","--operation (ADD|SUB)", String, "Type ADD to increase time or SUB to decrease time.") do |o|
-          @options[:operation] = o.upcase
+          @options[:operation] = o
         end
 
         opts.on("-t","--time (VALUE)", Float, "Time in milliseconds.") do |n|
@@ -42,7 +42,7 @@ module SrtShifter
       begin
 
           raise "Operation option is missing" if @options[:operation].nil?
-          raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation]
+          raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation].upcase
 
           raise "Time option is missing" if @options[:time].nil?
                     
