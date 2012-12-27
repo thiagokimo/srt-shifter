@@ -22,7 +22,7 @@ module SrtShifter
         opts.separator "Common Options:"
 
         opts.on("-o","--operation (ADD|SUB)", String, "Type ADD to increase time or SUB to decrease time.") do |o|
-          @options[:operation] = o
+          @options[:operation] = o.upcase
         end
 
         opts.on("-t","--time (VALUE)", Float, "Time in milliseconds.") do |n|

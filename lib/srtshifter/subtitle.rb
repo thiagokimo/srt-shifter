@@ -38,7 +38,7 @@ module SrtShifter
 
 		def convert_time time
 
-			if @opts[:operation] == "SUB"
+			if @opts[:operation] == "SUB" and @opts[:time] > 0
 				@opts[:time] = -@opts[:time]
 			end
 
