@@ -1,0 +1,7 @@
+1
+00:01:00,000 --> 00:02:00,000
+Altocumulus clouds occur between six thousand
+
+2
+00:03:00,000 --> 00:04:00,000
+and twenty thousand feet above ground level.

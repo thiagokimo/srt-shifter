@@ -8,7 +8,7 @@ module SrtShifter
     def initialize(args)
       @arguments = args
 
-      @operations = ["ADD", "SUB"]
+      @operations = ["ADD", "SUB", "SYNC"]
 
       @options = {}
     end
@@ -27,6 +27,14 @@ module SrtShifter
 
         opts.on("-t","--time (VALUE)", Float, "Time in milliseconds.") do |n|
           @options[:time] = n
+        end
+
+        opts.on("-b","--begin (VALUE)", String, "Begin.") do |n|
+          @options[:begin] = n
+        end
+
+        opts.on("-e","--end (VALUE)", String, "End.") do |n|
+          @options[:end] = n
         end
 
         opts.on_tail('-h', '--help', 'Show this help message.') do
@@ -49,7 +57,7 @@ module SrtShifter
           raise "Operation option is missing" if @options[:operation].nil?
           raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation].upcase
 
-          raise "Time option is missing" if @options[:time].nil?
+          raise "Time option is missing" if @options[:time].nil? and ["ADD", "SUB"].include?(@options[:operation])
                     
           raise "Input file is missing" if @arguments[0].nil?
           @options[:input] = @arguments[0]

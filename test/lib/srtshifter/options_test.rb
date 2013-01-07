@@ -1,3 +1,5 @@
+# require File.expand(__FILE__, "../../test_helper")
+# require File.expand_path('../../../test_helper', __FILE__)
 require "test_helper"
 
 describe SrtShifter do
@@ -7,7 +9,8 @@ describe SrtShifter do
 		describe "validate_args" do
 
 			before(:each) do
-				@args = {:operation => "ADD", :time => 10.0, :input => "test/samples/test_srt.srt", :output => "test_output.srt"}
+				@add_args = {:operation => "ADD", :time => 10.0, :input => "test/samples/test_srt.srt", :output => "test_output.srt"}
+				@sync_args = {:operation => "SYNC", :begin => '00:01:00', :end => '01:00:00', :input => "test/samples/test_srt.srt", :output => "test_output.srt"}
 			end
 
 			after(:each) do
@@ -31,15 +34,24 @@ describe SrtShifter do
 				lambda { opts.validate_args }.must_output("Unknown operation: bla. Please use -h or --help for usage.\n", nil)				
 			end
 
-			it "must accept lowercase existing operations" do
+			it "must accept lowercase add args" do
 
 				opts = SrtShifter::Options.new "test/samples/test_srt.srt test_output.srt"
-				opts.options = @args
+				opts.options = @add_args
 				opts.options[:operation] = "sub"
-
 
 				lambda { opts.validate_args }.must_be_silent				
 			end
+
+			it "must accept lowercase sync args" do
+
+				opts = SrtShifter::Options.new "test/samples/test_srt.srt test_output.srt"
+				opts.options = @sync_args
+				opts.options[:operation] = "sub"
+
+				lambda { opts.validate_args }.must_be_silent				
+			end
+
 
 			it "raise error when get none time option"
 
