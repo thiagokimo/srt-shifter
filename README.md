@@ -28,6 +28,10 @@ This example generates a new srt file called new_sub.srt, with 2.5 milliseconds 
 from original_sub.srt file.
 
     $ strshifter -o ADD -t 2.5 original_sub.srt new_sub.srt
+
+This example moves all subtitle times where the new subtitles start at 1 minute and 36 seconds and end at 1 hour, 36 minutes and 54 seconds. It moves all subtitles proportionally!
+
+    $ strshifter -o SYNC -b 00:01:36 -e 01:36:54 original_sub.srt new_sub.srt
     
 ## Future ideas and "to do"s'
 
