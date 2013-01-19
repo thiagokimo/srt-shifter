@@ -19,12 +19,13 @@ module SrtShifter
 
 				time_line = line.force_encoding("iso-8859-1")
 				time_match = time_line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
+        time_match.flatten!
 				
-				if $1.nil? && $2.nil?
+				if time_match[0].nil? || time_match[1].nil?
 					output_file.write(line)
 				else
-					new_start_time = convert_time $1 
-      				new_end_time = convert_time $2 
+					new_start_time = convert_time(time_match[0])
+      				new_end_time = convert_time(time_match[1])
       				new_line = "#{new_start_time} --> #{new_end_time}\n"
 
       				output_file.write(new_line)
