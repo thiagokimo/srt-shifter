@@ -5,7 +5,6 @@ module SrtShifter
 		
 		def initialize(options)
 			@opts = options
-      @opts[:time] = time_in_seconds(@opts[:time])
 		end
 
 		def shift
@@ -40,12 +39,13 @@ module SrtShifter
 		end
 
     def convert_time(time)
-      if @opts[:operation] == "SUB" and @opts[:time] > 0
-        @opts[:time] = -@opts[:time]
+      time_diff = time_in_seconds(@opts[:time])
+      if @opts[:operation] == "SUB" and time_diff > 0
+        time_diff *= -1
       end
 
       current_time = Time.parse(time)
-      new_time = Time.at(current_time.to_f + @opts[:time])
+      new_time = Time.at(current_time.to_f + time_diff)
       "#{new_time.strftime('%H:%M:%S')},#{sprintf("%.3d",new_time.usec/1000)}"
     end
 
