@@ -46,21 +46,21 @@ module SrtShifter
     def validate_args
       begin
 
-          raise "Operation option is missing" if @options[:operation].nil?
-          raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation].upcase
+        raise "Operation option is missing" if @options[:operation].nil?
+        raise "Unknown operation: #{@options[:operation]}" unless @operations.include? @options[:operation].upcase
 
-          raise "Time option is missing" if @options[:time].nil?
+        raise "Time option is missing" if @options[:time].nil?
                     
-          raise "Input file is missing" if @arguments[0].nil?
-          @options[:input] = @arguments[0]
-          
-          raise "Output file is missing" if @arguments[1].nil?
-          @options[:output] = @arguments[1]
+        raise "Input file is missing" if @arguments[0].nil?
+        @options[:input] = @arguments[0]
+        
+        raise "Output file is missing" if @arguments[1].nil?
+        @options[:output] = @arguments[1]
 
-        rescue Exception => ex
-          puts "#{ex.message}. Please use -h or --help for usage."
-          # exit(1)
-        end
+      rescue Exception => ex
+        puts "#{ex.message}. Please use -h or --help for usage."
+        # exit(1)
+      end
     end
   end
 end

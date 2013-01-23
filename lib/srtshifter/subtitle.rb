@@ -1,42 +1,42 @@
 require 'time'
 
 module SrtShifter
-	class Subtitle
-		
-		def initialize(options)
-			@opts = options
-		end
+  class Subtitle
 
-		def shift
+    def initialize(options)
+      @opts = options
+    end
 
-			start_time = Time.now
+    def shift
 
-			output_file = File.open(@opts[:output], 'w')
+      start_time = Time.now
 
-			lines = IO.readlines(@opts[:input])
+      output_file = File.open(@opts[:output], 'w')
 
-			lines.each do |line|
+      lines = IO.readlines(@opts[:input])
 
-				time_line = line.force_encoding("iso-8859-1")
-				time_match = time_line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
+      lines.each do |line|
+
+        time_line = line.force_encoding("iso-8859-1")
+        time_match = time_line.scan(/(\d{2}:\d{2}:\d{2},\d{3}) --\> (\d{2}:\d{2}:\d{2},\d{3})/)
         time_match.flatten!
-				
-				if time_match[0].nil? || time_match[1].nil?
-					output_file.write(line)
-				else
-					new_start_time = convert_time(time_match[0])
-      				new_end_time = convert_time(time_match[1])
-      				new_line = "#{new_start_time} --> #{new_end_time}\n"
 
-      				output_file.write(new_line)
-				end
-			end
+        if time_match[0].nil? || time_match[1].nil?
+          output_file.write(line)
+        else
+          new_start_time = convert_time(time_match[0])
+          new_end_time = convert_time(time_match[1])
+          new_line = "#{new_start_time} --> #{new_end_time}\n"
 
-			end_time = Time.now
+          output_file.write(new_line)
+        end
+      end
 
-			puts "\nFile created with success!"
-			puts "Elapsed time: #{end_time-start_time} seconds."
-		end
+      end_time = Time.now
+
+      puts "\nFile created with success!"
+      puts "Elapsed time: #{end_time-start_time} seconds."
+    end
 
     def convert_time(time)
       time_diff = time_in_seconds(@opts[:time])
