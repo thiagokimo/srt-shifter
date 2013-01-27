@@ -47,6 +47,14 @@ describe SrtShifter do
 				sub.convert_time(given_time).must_equal "01:20:13,999"
 			end
 
+      it "must accept time in '+%H:%M:%S.%L' format in ADD operation" do
+				given_time = "00:00:10,000"
+				@options[:time] = "+01:20:03.999"
+
+				sub = SrtShifter::Subtitle.new(@options)
+				sub.convert_time(given_time).must_equal "01:20:13,999"
+			end
+
 			it "must accept time in '%H:%M:%S.%L' format in SUB operation" do
 				given_time = "01:20:03,999"
 				@options[:operation] = "SUB"
