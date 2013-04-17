@@ -70,7 +70,6 @@ describe SrtShifter::Subtitle do
       sub = SrtShifter::Subtitle.new(@options)
       sub.convert_time(given_time).must_equal "00:00:02,000"
     end
-
 	end
 
 	describe "shift" do
@@ -80,6 +79,5 @@ describe SrtShifter::Subtitle do
 			sub.shift
 			File.exist?(@options[:output]).must_equal true
 		end
-
 	end
 end
