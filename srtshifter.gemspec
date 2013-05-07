@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "srtshifter"
   gem.version       = SrtShifter::VERSION
   gem.authors       = ["Thiago Rocha"]
-  gem.email         = ["kimobr@gmail.com"]
+  gem.email         = ["thiago@kimo.io"]
   gem.description   = %q{Shifts STR Subtitles}
   gem.summary       = %q{It fixes the timing of a given SubRip file}
   gem.homepage      = "http://thiagokimo.github.com/srt-shifter"
