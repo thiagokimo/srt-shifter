@@ -1,3 +1,6 @@
 module SrtShifter
-  VERSION = "1.3.0"
+  MAJOR = 1
+  MINOR = 3
+  PATCH = 0
+  VERSION = "#{MAJOR}.#{MINOR}.#{PATCH}"
 end
